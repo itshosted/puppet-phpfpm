@@ -429,6 +429,41 @@ security.limit_extensions = <%= @security_limit_extensions %>
 ;security.limit_extensions = .php .php3 .php4 .php5
 <% end -%>
 
+; Maximum size of POST data that PHP will accept.
+; Its value may be 0 to disable the limit. It is ignored if POST data reading
+; is disabled through enable_post_data_reading.
+; http://php.net/post-max-size
+<% if @post_max_size -%>
+post_max_size = <%= @post_max_size %>
+<% end -%>
+
+;;;;;;;;;;;;;;;;
+; File Uploads ;
+;;;;;;;;;;;;;;;;
+
+; Whether to allow HTTP file uploads.
+; http://php.net/file-uploads
+<% if @file_uploads -%>
+file_uploads = <%= @file_uploads %>
+<% end -%>
+
+; Temporary directory for HTTP uploaded files (will use system default if not
+; specified).
+; http://php.net/upload-tmp-dir
+;upload_tmp_dir =
+
+; Maximum allowed size for uploaded files.
+; http://php.net/upload-max-filesize
+<% if @upload_max_filesize -%>
+upload_max_filesize = <%= @upload_max_filesize %>
+<% end -%>
+
+; Maximum number of files that can be uploaded via a single request
+<% if @max_file_uploads -%>
+max_file_uploads = = <%= @max_file_uploads %>
+<% end -%>
+
+
 ; Pass environment variables like LD_LIBRARY_PATH. All $VARIABLEs are taken from
 ; the current environment.
 ; Default Value: clean env

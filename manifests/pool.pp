@@ -57,6 +57,10 @@ define phpfpm::pool (
     $service_name              = $phpfpm::service_name,
     $pool_dir                  = $phpfpm::pool_dir,
     $pool_template_file        = $phpfpm::params::pool_template_file,
+    $file_uploads              = $phpfpm::params::pool_file_uploads,
+    $max_file_uploads          = $phpfpm::params::pool_max_file_uploads,
+    $post_max_size             = $phpfpm::params::pool_post_max_size,
+    $upload_max_filesize       = $phpfpm::params::pool_upload_max_filesize,
 ) {
   $pool_file_path = "${pool_dir}/${name}.conf"
 

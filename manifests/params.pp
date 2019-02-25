@@ -99,6 +99,12 @@ class phpfpm::params {
       $pool_chdir                     = '/'
       $pool_catch_workers_output      = undef
       $pool_security_limit_extensions = undef
+
+      $pool_file_uploads              = undef
+      $pool_max_file_uploads          = undef
+      $pool_post_max_size             = undef
+      $pool_upload_max_filesize       = undef
+
       $pool_env                       = {}
       $pool_php_value                 = {}
       $pool_php_flag                  = {}
